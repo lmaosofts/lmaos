@@ -8,7 +8,7 @@
 
 If you're on Windows, you can try using `build` or `build.bat` in a Terminal. If neither works, last resort would be running the command from Windows Explorer.
 
-On Linux or other Unix-like systems, use `./build.sh`. If this doesn't work, try doing a `chmod +x ./build.sh` before trying again.
+On Linux or other Unix-like systems, use `./build.sh`. If this doesn't work, ~~try doing a `chmod +x ./build.sh` before trying again~~ (fixed in [`743ef53`](https://github.com/lmaosofts/lmaos/commit/743ef53)).
 
 The build command should automatically run `lmaos`, demonstrating the package manager in all it's beauty.
 
