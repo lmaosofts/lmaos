@@ -5,6 +5,7 @@
 #define START "\x1b[0m\x1b[33m\\ ☺ /\x1b[0m lmaos package manager\x1b[33m\n ×-× \x1b[0m   made by \x1b[3mlmaoso\x1b[41;1m\x1b[37;1mft\x1b[0m\x1b[3ms\x1b[0m\x1b[33m\n +-+ \x1b[0m \n"
 
 #ifdef _WIN32
+#error "h"
 char* pkgmgr = "winget";
 #else
 char* pkgmgr = "apt";
