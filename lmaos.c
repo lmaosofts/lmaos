@@ -4,6 +4,12 @@
 #include "colors.h"
 #define START "\x1b[0m\x1b[33m\\ ☺ /\x1b[0m lmaos package manager\x1b[33m\n ×-× \x1b[0m   made by \x1b[3mlmaoso\x1b[41;1m\x1b[37;1mft\x1b[0m\x1b[3ms\x1b[0m\x1b[33m\n +-+ \x1b[0m \n"
 
+#ifdef _WIN32
+char* pkgmgr = "winget";
+#else
+char* pkgmgr = "apt";
+#endif
+
 // bool turnOffANSI = false;
 
 /*
@@ -63,14 +69,15 @@ int main(int ac, char* args[]) {
 		}
 	*/
 	printf(START);
-	iprintf("Number of arguments: %d\n", ac);
-	int count = 0;
-	while (count < ac) {
-		iprintf("Argument %d: %s\n", count, args[count]);
-		count+=1;
-	}
 	if (ac==1) {
-		iprintf("lemme tell ya smth, lmaos is a wary sigma pkg manager\t");
+		char *multiline_string[] = {
+"hallo welkommen to lmaos, the lmaosofts winget!",
+"in C using an array of strings.",
+"Each line can be accessed individually."
+		};
+		for (int i = 0; i < 3; i++) {
+			iprintf("%s\n", multiline_string[i]);
+		}
 		return 0;
 	}
 	iprintf("");
