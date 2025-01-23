@@ -5,12 +5,6 @@
 #define START "\x1b[0m\x1b[33m\\ ☺ /\x1b[0m lmaos package manager\x1b[33m\n ×-× \x1b[0m   made by \x1b[3mlmaoso\x1b[41;1m\x1b[37;1mft\x1b[0m\x1b[3ms\x1b[0m\x1b[33m\n +-+ \x1b[0m \n"
 
 #ifdef _WIN32
-#pragma message("_WIN32 is defined")
-#else
-#pragma message("_WIN32 is not defined")
-#endif
-
-#ifdef _WIN32
 char* pkgmgr = "winget";
 #else
 char* pkgmgr = "apt";
@@ -77,7 +71,7 @@ int main(int ac, char* args[]) {
 	printf(START);
 	if (ac==1) {
 		char *multiline_string[] = {
-"hallo welkommen to lmaos, the lmaosofts winget!",
+"hallo welkommen to lmaos, the lmaosofts " pkgmgr "!",
 "in C using an array of strings.",
 "Each line can be accessed individually."
 		};
