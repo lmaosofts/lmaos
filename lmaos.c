@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
 #include "colors.h"
 #define START "\x1b[0m\x1b[33m\\ ☺ /\x1b[0m lmaos package manager\x1b[33m\n ×-× \x1b[0m   made by \x1b[3mlmaoso\x1b[41;1m\x1b[37;1mft\x1b[0m\x1b[3ms\x1b[0m\x1b[33m\n +-+ \x1b[0m \n"
 
@@ -70,13 +72,19 @@ int main(int ac, char* args[]) {
 	*/
 	printf(START);
 	if (ac==1) {
-		char *multiline_string[] = {
-"hallo welkommen to lmaos, the lmaosofts " pkgmgr "!",
-"in C using an array of strings.",
-"Each line can be accessed individually."
+		// iprintf("%d\n", strlen("hallo welkommen to lmaos, the lmaosofts ") + strlen("!") + 1);
+		// prints out 42
+		int lenOfRest = 42;
+		char *intro = malloc(strlen(pkgmgr) + lenOfRest);
+		sprintf(intro, "hallo welkommen to lmaos, the lmaosofts %s!", pkgmgr);
+		char *help[] = {
+intro,
+"wowza"
 		};
-		for (int i = 0; i < 3; i++) {
-			iprintf("%s\n", multiline_string[i]);
+		int count = 0;
+		while (count < 3) {
+			iprintf("%s\n", help[count]);
+			count += 1;
 		}
 		return 0;
 	}
