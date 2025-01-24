@@ -70,6 +70,7 @@ int main(int ac, char* args[]) {
 			enableANSI();
 		}
 	*/
+	system("chcp 65001 >nul 2>&1"); // the ez way
 	printf(START);
 	if (ac==1) {
 		// iprintf("%d\n", strlen("hallo welkommen to lmaos, the lmaosofts ") + strlen("!") + 1);
